@@ -17,34 +17,30 @@ function shortestWordEditPath(source, target, words) {
   };
 
   //loop throught letters of current  //bit[i] => b i t
+  //whidle(current !== target &&  >= 20){
   for (let i = 0; i < current.length; i++) {
-    //try changing first letter current[j] to target[j] => bit[1] to dog[1] = dit
-    console.log(
-      "(replaceAt(current, i, target[i])",
-      words.indexOf(replaceAt(source, i, target[i])) > -1
-    );
-    console.log(
-      "replaceAt(source, i, target[i])",
-      replaceAt(source, i, target[i])
-    );
+    let countOutput = 0;
+    //check if changed version is found in words
+    if (words.indexOf(replaceAt(source, i, target[i])) > -1) {
+      current = replaceAt(source, i, target[i]);
+      countOutput++;
+    }
+    console.log(current, countOutput, "test");
   }
-  //if(replaceAt(current, i, target[i]) )
-
-  //check if changed version is found in words
-  //if()
-  //yes
-  //found => countOutp = +1
-  //update current
-
-  //no
-  //keep in loop for next j
-
-  //no
-  //keep in loop for next i
-
-  //no
-  //return countOutp = -1
 }
+//if()
+//yes
+//found => countOutp = +1
+//update current
+
+//no
+//keep in loop for next j
+
+//no
+//keep in loop for next i
+
+//no
+//return countOutp = -1
 
 shortestWordEditPath("bit", "dog", [
   "but",
